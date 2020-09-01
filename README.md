@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * Download and install Android Studio. 
-* Obtain a THEOplayer [Android TV SDK](https://support.theoplayer.com/hc/en-us/categories/115000161065-SDK) license. 
+* Obtain a THEOplayer [Android TV SDK](https://portal.theoplayer.com/register) license. 
 If you don't have a license yet, contact your sales contact or email us at [support@theoplayer.com](mailto:support@theoplayer.com).
 
 ### Include THEOplayer Android TV SDK in the project
@@ -25,39 +25,25 @@ Once you obtained the license, you need copy it into the ``` app/libs ``` folder
 
 In the module-level ```build.gradle``` file (```app/build.gradle```) use the proper name of your SDK file
 
-```
+```java
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation files('libs/theoplayer.aar')
 
-    implementation(name:'FILENAME_OF_YOUR_SDK_FILE', ext:'aar')
-
+    def leanback_version = "1.0.0"
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.android.support:leanback-v17:27.1.1'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation "androidx.leanback:leanback:$leanback_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-rc1'
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    
 }
 ```
 
-For example if the SDK file is called ```theoplayer.aar```, then your ```build.gradle``` file should look like this :
+* Note: For example if the SDK file is called ```theoplayer.aar```, then your ```build.gradle``` file should look like above.
 
-```
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation(name:'theoplayer', ext:'aar')
-
-    implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.android.support:leanback-v17:27.1.1'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-}
-```
 
 
 ## Build the project

@@ -1,11 +1,22 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="THEO.Base" parent="Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/THEOGray</item>
+
+        <item name="android:colorPrimary">@color/THEOGray</item>
+        <item name="android:colorPrimaryDark">@color/THEOGray</item>
+        <item name="android:colorButtonNormal">@color/THEOYellow</item>
+        <item name="android:colorPressedHighlight">@color/THEOYellowAlt</item>
     </style>
 
+
+    <style name="THEO.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/THEOGray</item>
+        <item name="android:colorAccent">@color/THEOYellow</item>
+        <item name="android:textColor">@color/THEOWhite</item>
+        <item name="android:checkMarkTint">@color/THEOYellowAlt</item>
+        <item name="colorAccent">@color/THEOWhite</item>
+        <item name="android:textColorSecondary">@color/THEOWhite</item>
+    </style>
 </resources>

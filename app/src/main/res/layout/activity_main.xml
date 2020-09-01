@@ -1,39 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PlayerActivity">
 
-    <com.theoplayer.android.api.THEOplayerView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:id="@+id/theoplayer">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    </com.theoplayer.android.api.THEOplayerView>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_playpause"
-        android:text="PLAY/PAUSE"
-        app:layout_constraintTop_toBottomOf="@+id/theoplayer"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_playstatus"
-        app:layout_constraintLeft_toRightOf="@+id/btn_playpause"
-        app:layout_constraintTop_toBottomOf="@+id/theoplayer"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_playpause"
-        android:layout_marginLeft="20dp"/>
+        <com.theoplayer.android.api.THEOplayerView
+            android:id="@+id/theoPlayerView"
+            android:background="@color/THEOYellow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:chromeless="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txt_timeupdate"
-        app:layout_constraintLeft_toRightOf="@+id/txt_playstatus"
-        app:layout_constraintTop_toBottomOf="@+id/theoplayer"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_playpause"
-        android:layout_marginLeft="20dp"/>
+        </com.theoplayer.android.api.THEOplayerView>
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:background="@color/THEOGray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/trickbar"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/playPauseBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/playIcon" />
+
+            <Button
+                android:id="@+id/backwardBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/backward" />
+
+            <Button
+                android:id="@+id/forwardBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/forward" />
+
+            <Button
+                android:id="@+id/fbckBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/skipB" />
+
+            <Button
+                android:id="@+id/ffwdBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/skipF" />
+
+
+            <Button
+                android:id="@+id/volumeDownBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/volumeDown" />
+
+            <Button
+                android:id="@+id/volumeUpBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/volumeUp" />
+
+            <Button
+                android:id="@+id/ccBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/cc" />
+
+            <Button
+                android:id="@+id/qualityBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="@dimen/iconSize"
+                android:height="@dimen/iconSize"
+                android:text="@string/quality" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="6dp"
+                    android:max="100"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:progress="0">
+
+                </ProgressBar>
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="1dp"
+                    android:text=""
+                    android:textSize="12dp"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

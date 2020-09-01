@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">THEOplayerExample</string>
+    <string name="app_name">Simple Playback</string>
+
+    <string name="defaultSourceUrl">https://cdn.theoplayer.com/video/dash/big_buck_bunny/BigBuckBunny_10s_simple_2014_05_09.mpd</string>
+    <string name="defaultLicenseUrl">https://amssamples.keydelivery.mediaservices.windows.net/Widevine/?KID=1ab45440-532c-4399-94dc-5c5ad9584bac</string>
+    <string name="defaultPosterUrl">https://cdn.theoplayer.com/theoplayer.jpg</string>
+
+
+    <string name="playIcon">&#xf04b;</string>
+    <string name="pauseIcon">&#xf04c;</string>
+    <string name="volumeUp">&#xf028;</string>
+    <string name="volumeDown">&#xf027;</string>
+    <string name="forward">&#xf04e;</string>
+    <string name="backward">&#xf04a;</string>
+    <string name="skipF">&#xf051;</string>
+    <string name="skipB">&#xf048;</string>
+    <string name="cc">&#xf20a;</string>
+    <string name="quality">&#xf013;</string>
+
+    <string name="live">LIVE</string>
+    <string name="selectSubtitles">Select subtitles:</string>
+    <string name="none">none</string>
+    <string name="timeFormat">%02d:%02d:%02d</string>
+    <string name="timeProgressSeparator"> / </string>
+
 </resources>
