@@ -21,6 +21,8 @@ If you don't have a license yet, contact your sales contact or email us at [supp
 
 Once you obtained the license, you need copy it into the ``` app/libs ``` folder of the project.
 
+* Note: You can create a new folder ```libs``` to add the `theoplayer.aar` SDK
+
 ### Link your SDK file in ```build.gradle```
 
 In the module-level ```build.gradle``` file (```app/build.gradle```) use the proper name of your SDK file
