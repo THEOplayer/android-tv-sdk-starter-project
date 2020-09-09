@@ -310,9 +310,6 @@ public class PlayerActivity extends Activity {
         TypedSource typedSource = TypedSource.Builder
                 .typedSource()
                 .src(getString(R.string.defaultSourceUrl))
-                .liveOffset(1.0)
-                .lowLatency(true)
-                .timeServer("https://time.akamai.com/?ios&ms=true")
                 .type(SourceType.DASH)
                 .build();
 
